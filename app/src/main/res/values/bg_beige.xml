@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Bg_beige_size" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginHorizontal">42dp</item>
+        <item name="android:background">@drawable/bg_beige</item>
+    </style>
+</resources>

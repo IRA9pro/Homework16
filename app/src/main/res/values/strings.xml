@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Homework16</string>
+    <string name="text1">Choose the</string>
+    <string name="text2">Food you love</string>
+    <string name="text3">Search</string>
+    <string name="text4">Catagory</string>
+    <string name="text2.1">Catagory</string>
+    <string name="text">Homework16</string>
+    <string name="text1.1">Forgot Password</string>
+    <string name="text1.2">Email Address</string>
+    <string name="text1.3">Password</string>
+    <string name="btn_text1">Log in</string>
+    <string name="dollar">$</string>
+</resources>
