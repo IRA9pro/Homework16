@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -32,6 +33,24 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
+        FoodNameAdapter adapter1 = getNameAdapter();
+
+        binding.rvFoodlist1.setAdapter(adapter1);
+        binding.rvFoodlist1.setLayoutManager(
+                new LinearLayoutManager(MenuActivity.this,
+                        LinearLayoutManager.HORIZONTAL, false));
+
+
+        FoodPriceAdapter adapter2 = getFoodPriceAdapter();
+
+        binding.rvFoodlist2.setAdapter(adapter2);
+        binding.rvFoodlist2.setLayoutManager(
+                new LinearLayoutManager(MenuActivity.this,
+                LinearLayoutManager.HORIZONTAL, false));
+    }
+
+    @NonNull
+    private static FoodNameAdapter getNameAdapter() {
         ViewFood viewFood1 = new ViewFood("Burger", R.drawable.miniburger_figma);
         ViewFood viewFood2 = new ViewFood("Pizza", R.drawable.minipizza_figma);
         ViewFood viewFood3 = new ViewFood("Chicken", R.drawable.minichicken_figma);
@@ -43,13 +62,11 @@ public class MenuActivity extends AppCompatActivity {
         viewFoodArrayList.add(viewFood3);
 
         FoodNameAdapter adapter1 = new FoodNameAdapter(viewFoodArrayList);
+        return adapter1;
+    }
 
-        binding.rvFoodlist1.setAdapter(adapter1);
-        binding.rvFoodlist1.setLayoutManager(
-                new LinearLayoutManager(MenuActivity.this,
-                        LinearLayoutManager.HORIZONTAL, false));
-
-
+    @NonNull
+    private static FoodPriceAdapter getFoodPriceAdapter() {
         ViewFoodPrice viewFoodPrice1 =
                 new ViewFoodPrice("Salad Burger", 12, R.drawable.saladburger_figma);
         ViewFoodPrice viewFoodPrice2 =
@@ -61,10 +78,6 @@ public class MenuActivity extends AppCompatActivity {
         viewFoodPriceArrayList.add(viewFoodPrice2);
 
         FoodPriceAdapter adapter2 = new FoodPriceAdapter(viewFoodPriceArrayList);
-
-        binding.rvFoodlist2.setAdapter(adapter2);
-        binding.rvFoodlist2.setLayoutManager(
-                new LinearLayoutManager(MenuActivity.this,
-                LinearLayoutManager.HORIZONTAL, false));
+        return adapter2;
     }
 }
